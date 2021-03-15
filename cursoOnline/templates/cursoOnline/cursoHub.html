@@ -1,0 +1,28 @@
+<head>
+    <title>Hub</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" type="text/css" href="{% static 'cursoOnline/cursoHub.css' %}">
+</head>
+<body>
+   <div>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <input  class="btn btn--stripe btn--radius" type="submit" value="Message Board" name="messageboard"></br>
+        </form>
+        <form action=""  method="POST" >
+            {% csrf_token %}
+            <input  class="btn btn--stripe btn--radius" type="submit" value="Answer Questions" name="answerquestions"></br>
+        </form>
+        <form action=""  method="POST" >
+            {% csrf_token %}
+            <input  class="btn btn--stripe btn--radius" type="submit" value="Watch Video Classes" name="videos"></br>
+        </form>
+        {% if participante.passed == True %}
+        <form action=""  method="POST" >
+            {% csrf_token %}
+            <input  class="btn btn--stripe btn--radius" type="submit" value="Finish Course">
+        </form>
+        {% endif %}
+    </div>
+</body>

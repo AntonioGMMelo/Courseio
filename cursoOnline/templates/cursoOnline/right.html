@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <title>Passed</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'cursoOnline/right.css' %}">
+</head>
+<body>
+    <h3>
+        <h1 id="something">Congrats!!!</h1>
+        <h2 id="something">{{ right }}/5</h2></br></br>
+       <a href="{% url 'cursoOnline:cursoHub' curso_id participante_id %}">Back to Hub</a>
+    </div>
+</body>
+</html>

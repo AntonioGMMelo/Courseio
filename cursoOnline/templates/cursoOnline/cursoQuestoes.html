@@ -1,0 +1,25 @@
+<head>
+    {% load static %}
+    <title>Questões</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'cursoOnline/cursoQuestoes.css' %}">
+</head>
+<body>
+    <form method="POST">
+         {% csrf_token %}
+        <ol>
+            {% for questao in question_list %}
+                <li>
+                    <h1>{{ questao.questao_texto }}</h1>
+                    {% for opcao in questao.opcao_set.all %}
+                    <input type="radio" name="opcaoQ{{ questao.id }}" id="opcao{{ forloop.counter }}" value="{{ opcao.id }}" />
+                    <label for="opcao{{ forloop.counter }}">
+                        {{ opcao.opcao_texto }}
+                    </label>
+                    <br />
+                    {% endfor %}
+                </li>
+            {% endfor %}
+        </ol>
+        <input type="submit" id="id1" value="Done" >
+    </form>
+</body>

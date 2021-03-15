@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<head>
+    <title>Courseio Homepage</title>
+    {% load static %}
+    <meta charset="utf8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'cursoOnline/index.css' %}">
+</head>
+<body>
+    <header class = "headerClass">
+        <div class = "headerClass headerWrapper">
+            <div class= "headerClass imageWrapper">
+                <img class="headerClass image" src="{% static 'cursoOnline/Books.jpg' %}">
+            </div>
+            <div class= "headerClass contentWrapper">
+                <h1 class="headerClass headline">Courseio</h1>
+                <nav>
+                    <ul class="headerClass list">
+                        <a href="{{ course_list.0.id }}/logInSignIn/" class="headerClass link"><li class = "headerClass listItem">{{ course_list.0.nome }}</li></a>
+                        <a href="{{ course_list.1.id }}/logInSignIn/" class="headerClass link"><li class = "headerClass listItem">{{ course_list.1.nome }}</li></a>
+                        <a href="{{ course_list.2.id }}/logInSignIn/" class="headerClass link"><li class = "headerClass listItem">{{ course_list.2.nome }}</li></a>
+                        <a href="{{ course_list.3.id }}/logInSignIn/" class="headerClass link"><li class = "headerClass listItem">{{ course_list.3.nome }}</li></a>
+                        <a href="{{ course_list.4.id }}/logInSignIn/" class="headerClass link"><li class = "headerClass listItem">{{ course_list.4.nome }}</li></a>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="section1">
+            <div class="section image">
+                <a href="{{ course_list.0.id }}/logInSignIn/"><img src="{% static 'cursoOnline/Gastronomy.jpg' %}"></a>
+            </div>
+            <div class="section text">
+                <h2>{{ course_list.0.nome }}:</h2>
+                <p>{{ course_list.0.descricao }}.</p>
+            </div>
+        </section>
+        <section class = "section2">
+            <div class = "section image">
+                <a href="{{ course_list.1.id }}/logInSignIn/"><img src="{% static 'cursoOnline/Carpentry.jpg' %}"></a>
+            </div>
+            <div class= "section image">
+                <h2>{{ course_list.1.nome }}:</h2>
+                <p>{{ course_list.1.descricao }}.</p>
+            </div>
+        </section>
+        <section class="section3">
+            <div class = "section image">
+                <a href="{{ course_list.2.id }}/logInSignIn/"><img src="{% static 'cursoOnline/Acting.jpg' %}"></a>
+            </div>
+            <div class="section text">
+                <h2>{{ course_list.2.nome }}:</h2>
+                <p>{{ course_list.2.descricao }}.</p>
+            </div>
+        </section>
+        <section class="section4">
+            <div class="section image">
+                <a href="{{ course_list.3.id }}/logInSignIn/"><img src="{% static 'cursoOnline/Music.jpg' %}"></a>
+            </div>
+            <div class="section text">
+                <h2>{{ course_list.3.nome }}:</h2>
+                <p>{{ course_list.3.descricao }}.</p>
+            </div>
+        </section>
+        <section class="section5">
+            <div class = "section image">
+                <a href="{{ course_list.4.id }}/logInSignIn/"><img src="{% static 'cursoOnline/Sewing.jpg' %}"></a>
+            </div>
+            <div class="section text">
+                <h2>{{ course_list.4.nome }}:</h2>
+                <p>{{ course_list.4.descricao }}.<p>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p class="footer p">
+            Support Contacts:</br>
+            Cellphone: +123 456 789 012</br>
+            E-mail: <a class="footer a" href="ticketRaffle.suport@gmail.com">ticketRaffle.suport@gmail.com</a>
+        </p>
+    </footer>
+</body>

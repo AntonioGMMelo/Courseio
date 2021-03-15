@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <title>Chat</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'cursoOnline/cursoChat.css' %}">
+</head>
+<body>
+<div class="header">
+    <nav>
+        <div class="site-title">Courseio</div>
+        <ul>
+            <form method="POST" name="filter">
+                {% csrf_token %}
+                <li>
+                    <select name='filtro'>
+                        <option value="Today" name='Today'>Today</option>
+                        <option value="Last Week" name='Last Week'>Last Week</option>
+                        <option value="Last Month">Last Month</option>
+                        <option value="All Time">All Time</option>
+                        {% if filtro == 'Today' %} <!--Os filtros não se mantêm constantes quando se aplicam, mudam os nomes para os predefinidos-->
+                            <script>
+                                $('div.header filtro').val('Last Week');
+                                $('.header option[value=Today]').attr('selected','selected');
+                            </script>
+                        {% endif %}
+                    </select>
+                <li>
+                    <select name='sort'>
+                        <option value="Most Recent">Most recent</option>
+                        <option value="Upvotes">Upvotes</option>
+                        <option value="Downvotes">Downvotes</option>
+                        <option value="UpDownvotes">Up/Downvote Ratio</option>
+                    </select>
+                   <li><input type="submit" name="sortfilter">
+            </form>
+        </ul>
+    </nav>
+</div>
+<div id="content">
+    <div id="columns-container">
+        <div class="column column-a">
+            {% if message_list %}
+            <br id="posts">
+                {% for m in message_list %}
+                <div name="post{{ forloop.counter }}" id="idk">
+                    <div id="postHeader">
+                        <div class="header">
+                            <nav>
+                                <ul>
+                                    <div class="site-title"></div>
+                                    <li> <form method="POST">
+                                            {% csrf_token %}
+                                            <input type="hidden" value="{{ m.id }}" name="m_idU">
+                                            <input type="image" name="up" value="up" height="10" src="https://toppng.com/uploads/preview/arrow-clipart-windows-green-up-arrow-ico-11563053386iuhx755inu.png" alt="Submit Me" >
+                                            <li>{{ m.upvotes }}</li>
+                                    </form>
+                                    <li> <form method="POST">
+                                            {% csrf_token %}
+                                            <input type="hidden" value="{{ m.id }}" name="m_idD">
+                                            <input type="image" name="down" value="down" alt="Submit Me" height="10" src="data:image/jpeg;base64,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">
+                                            <li>{{ m.downvotes }}</li>
+                                    </form>
+                                    <li>{{ m.participante }}</li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div id="message">
+                        {% if m.isLink %}
+                            <iframe src="{{ m.link }}"></iframe>
+                            <h2 id="id2">{{ m.content }}</h2>
+                        {% else %}
+                            <h3 id="id3">{{ m.content }}</h3>
+                        {% endif %}
+                    </div>
+                </div></br>
+                {% endfor %}
+            </div>
+                {% else %}
+                    <h1>No messages to display</h1>
+                {% endif %}
+        </div>
+        <div class="column column-b">
+            <div id="idk">
+                <h2>{{ curso }}</h2>
+                {% with 'cursoOnline/'|add:curso.linkname|add:'.jpg' as link %}
+                    <image src="{% static link %}"id="img"></image>
+                {% endwith %}
+                <h3>{{ curso.descricao }}</h3>
+            </div>
+        </div>
+    </div>
+</div></br>
+<div class="sticky">
+<div id="footer">
+    <form method="POST"  id="postform">
+        {% csrf_token %}
+        <input type="text" name="content" id="text">
+        <input type="submit" name="Post" value="post" id="post">
+        Link?
+        <input type="checkbox" name="islink" id="checkbox">
+        Link:
+        <input type="text" name="link" id="link">
+    </form>
+</div>
+</div>
+    <script>src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script>src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"</script>
+</body>
+</html>

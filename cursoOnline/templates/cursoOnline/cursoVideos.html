@@ -1,0 +1,63 @@
+<head>
+    {% load static %}
+    <title>Videos</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'cursoOnline/cursoVideos.css' %}">
+</head>
+<body>
+    {% if curso.id == 1 %}
+    <div id="main">
+        <div id="top">
+            <a href="https://www.youtube.com/watch?v=Q_urZxcUe-0&list=PLnVs4jmXLzHPFp5j2hl3MDx8y1W_u2hht"><span></span></a>
+            <iframe src="https://www.youtube.com/embed/Q_urZxcUe-0?autoplay=1;&controls=0" frameBorder="0" allow="autoplay"></iframe>
+        </div>
+        <div id="bottom">
+            <a href="https://www.youtube.com/watch?v=Udzs_MPNpMQ&list=PLN84Hc2sBeEKbRo-yson0E_SOQJZBtx0n&index=1"><span></span></a>
+            <iframe src="https://www.youtube.com/embed/Udzs_MPNpMQ?controls=0;&autoplay=1" frameBorder="0" allow="autoplay"></iframe>
+        </div>
+    </div>
+    {% elif curso.id == 2 %}
+        <div id="main">
+        <div id="top">
+            <a href="https://www.youtube.com/watch?v=57WvhVmc8hk&list=PL7TL3DIMD30fthDx3QKBMs280CjTPqxjM"><span></span></a>
+            <iframe src="https://www.youtube.com/embed/57WvhVmc8hk?autoplay=1;&controls=0" frameBorder="0" allow="autoplay"></iframe>
+        </div>
+        <div id="bottom">
+            <a href="https://www.youtube.com/watch?v=M-VFK6Tx3e4&list=PLhqK_8dnaIW0GpYyhWls4JYsd2dtuzM9q"><span></span></a>
+            <iframe src="https://www.youtube.com/embed/M-VFK6Tx3e4?controls=0;&autoplay=1" frameBorder="0" allow="autoplay"></iframe>
+        </div>
+    </div>
+    {% elif curso.id == 3 %}
+        <div id="main">
+        <div id="top">
+            <a href="https://www.youtube.com/watch?v=zO4L2P4AkAw&list=PLzq3_KSDNgb-eWZvBNWLHpX6_ued7wqyA"><span></span></a>
+            <iframe src="https://www.youtube.com/embed/zO4L2P4AkAw?autoplay=1;&controls=0" frameBorder="0" allow="autoplay"></iframe>
+        </div>
+        <div id="bottom">
+            <a href="https://www.youtube.com/watch?v=TrgNKGjSyxA&list=PL3ZKlovVA9RLfTqjnwEQJu32C2YBtWBkk"><span></span></a>
+            <iframe src="https://www.youtube.com/embed/TrgNKGjSyxA?controls=0;&autoplay=1" frameBorder="0" allow="autoplay"></iframe>
+        </div>
+    </div>
+    {% elif curso.id == 4 %}
+        <div id="main">
+        <div id="top">
+            <a href="https://www.youtube.com/watch?v=6gHEIF0rT2w&list=PLB585CE43B02669C3"><span></span></a>
+            <iframe src="https://www.youtube.com/embed/6gHEIF0rT2w?autoplay=1;&controls=0" frameBorder="0" allow="autoplay"></iframe>
+        </div>
+        <div id="bottom">
+            <a href="https://www.youtube.com/watch?v=ZhDq0JuytoU&list=PLL_-wssODcBPxMZQwfyIDs7be3TG5WvWJ"><span></span></a>
+            <iframe src="https://www.youtube.com/embed/ZhDq0JuytoU?controls=0;&autoplay=1" frameBorder="0" allow="autoplay"></iframe>
+        </div>
+    </div>
+    {% else %}
+        <div id="main">
+        <div id="top">
+            <a href="https://www.youtube.com/watch?v=2H1Q7K0lY6g&list=PL_o5Ri9T8hDDsg1VEgdd14LNcD_lOy4PM"><span></span></a>
+            <iframe src="https://www.youtube.com/embed/2H1Q7K0lY6g?autoplay=1;&controls=0" frameBorder="0" allow="autoplay"></iframe>
+        </div>
+        <div id="bottom">
+            <a href="https://www.youtube.com/watch?v=MOtkul2xmJM&list=PLnZ4JpshzldQ1uSbIdhJqGYS7QSxe6Eln"><span></span></a>
+            <iframe src="https://www.youtube.com/embed/MOtkul2xmJM?controls=0;&autoplay=1" frameBorder="0" allow="autoplay"></iframe>
+        </div>
+    </div>
+    {% endif %}
+</body>

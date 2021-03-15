@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+    <title>Log In Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'cursoOnline/logInSignIn.css' %}"/>
+</head>
+<body>
+    <div>
+        <form action="" name="registration" method="POST">
+            {% csrf_token %}
+            <label for = "nome">Name: </label><input type="text" name="nome" id = "nome"/></br>
+            <label for = "senha">Password: </label><input type="text" name="senha" id="senha"/>
+            <input class="button" type="submit" value="Log in" name="Login">
+        </form>
+        <form action=""  method="POST" >
+            {% csrf_token %}
+            <input class="button" type="submit" value="Sign in">
+        </form>
+        <a href="{% url 'cursoOnline:index' %}">Back to Homepage</a>
+        {% block 123 %}
+        {% endblock %}
+    </div>
+</body>

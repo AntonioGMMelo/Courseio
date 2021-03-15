@@ -1,0 +1,101 @@
+/* variables */
+:root{
+    --Bright-Green:#CC8742;
+    --Deep-Red:#DF1D1D;
+    --Bright-Blue:#526DEE;
+    --Bright-Yellow:#BCFF00;
+    --White:#FFFFFF;
+    --Jet-Black:#000000;
+
+}
+/* reset */
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 62.5%;
+    box-sizing: border-box;
+    font:inherit;
+    vertical-align:baseline;
+}
+/* general */
+body{
+    height: 100%;
+    width: 100%;
+    background: url("{% static 'cursoOnline/Books.jpg' %}");
+    background-size: cover;
+    text-align: left;
+}
+a{
+    color: var(--Deep-Red);
+    text-decoration: none;
+}
+
+img{
+    size: 100%;
+}
+
+ div{
+    position: absolute;
+    text-align: center;
+    margin-top: 50%;
+    margin-left: 50%;
+    transform: translate(-10rem, -10rem);
+    background: var(--Bright-Yellow);
+    color : var(--Deep-Red);
+    font-family: "Georgia",serif;
+    font-size:1.52rem;
+    display: inline-block;
+    width: 20rem;
+    height: 20rem;
+ }
+
+ label{
+    text-shadow: -2px 2px var(--White);
+ }
+
+ input{
+      display: inline-block;
+      margin-top: .5rem;
+      margin-bottom: .5rem;
+      border-radius: 5px 5px 5px 5px;
+  }
+/* media querry for larger screens */
+ @media(min-width:80rem){
+    div{
+        margin-top: 25%;
+    }
+}
+/* hover and focus for links and inputs */
+a:hover,
+a:focus{
+    color: var(--Bright-Blue);
+}
+
+input:hover,
+input:focus{
+    background: var(--Jet-Black);
+    color: var(--White);
+}
+/* custom button */
+.button{
+    background: var(--Bright-Green);
+    color: var(--White);
+    text-shadow: .2rem .2rem var(--Jet-Black);
+    border: none;
+    font-size: 2rem;
+    padding: .5rem 1rem;
+    border-radius: 1rem .5rem 1rem .5rem;
+}
+/* hover and focus for buttons */
+.button:hover,
+.button:focus{
+    opacity: .7;
+}
+/* erro message */
+.error{
+    color: var(--Deep-Red);
+    background: var(--Jet-Black);
+    text-shadow: -2px 2px var(--White);
+    border-radius: 50px 50px 50px 50px;
+}

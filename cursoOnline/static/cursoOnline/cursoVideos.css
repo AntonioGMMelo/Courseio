@@ -1,0 +1,46 @@
+html,
+body,
+object {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+div {
+  margin: 0px;
+  padding: 0px;
+}
+#main{
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+#top{
+  border: 1px solid red;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 100px;
+  height: calc(100% - 50%);
+  width: 100%;
+}
+#bottom {
+  border: 1px solid blue;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: 50%;
+  width: 100%;
+}
+iframe{
+    width:100%;
+    height:100%;
+}
+span{
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left: 0;
+  z-index: 1;
+}

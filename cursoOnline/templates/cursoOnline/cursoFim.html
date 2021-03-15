@@ -1,0 +1,23 @@
+<head>
+    <title>Hub</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" type="text/css" href="{% static 'cursoOnline/cursoHub.css' %}">
+</head>
+<body>
+   <div>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <input  class="btn btn--stripe btn--radius" type="submit" value="End User" name="endUser"></br>
+        </form>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <select name="curso">
+                {% for c in curso_list %}
+                <option value="{{ c.nome }}">{{ c.nome }}</option>
+                {% endfor %}
+            </select></br>
+            <input  class="btn btn--stripe btn--radius" type="submit" value="new Course" name="newCourse"></br>
+        </form>
+   </div>
+</body>

@@ -1,0 +1,24 @@
+<head>
+    <title>Sign In Page</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" type="text/css" href="{% static 'cursoOnline/logInSignIn.css' %}"/>
+    <script src="{% static 'cursoOnline/validation.js' %}"></script>
+</head>
+<body>
+    {% block 123 %}
+    {% endblock %}
+    <image src="{% static 'cursoOnline/Books.jpg' %}" height="1000" width="2000"></image>
+    <div>
+        <form action="" name="registration" method="POST">
+            {% csrf_token %}
+            </br></br>
+            Nome:<input type="text" name="nome"/></br>
+            Senha:<input type="text" name="senha"/></br></br>
+            <input class="button" type="submit" value="Sign in">
+        </form>
+         <a href="{% url 'cursoOnline:index' %}">Back to Homepage</a>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+</body> 
